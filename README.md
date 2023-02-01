@@ -1,208 +1,235 @@
 # merrymoon
--- phpMyAdmin SQL Dump
--- version 4.9.3
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Generation Time: Jan 31, 2023 at 09:00 AM
--- Server version: 5.7.26
--- PHP Version: 7.4.2
+<p align="center">
+    <a href="https://github.com/yiisoft" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
+    </a>
+    <h1 align="center">Yii 2 Basic Project Template</h1>
+    <br>
+</p>
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
+rapidly creating small projects.
+
+The template contains the basic features including user login/logout and a contact page.
+It includes all commonly used configurations that would allow you to focus on adding new
+features to your application.
+
+[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
+[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
+[![build](https://github.com/yiisoft/yii2-app-basic/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-basic/actions?query=workflow%3Abuild)
+
+DIRECTORY STRUCTURE
+-------------------
+
+      assets/             contains assets definition
+      commands/           contains console commands (controllers)
+      config/             contains application configurations
+      controllers/        contains Web controller classes
+      mail/               contains view files for e-mails
+      models/             contains model classes
+      runtime/            contains files generated during runtime
+      tests/              contains various tests for the basic application
+      vendor/             contains dependent 3rd-party packages
+      views/              contains view files for the Web application
+      web/                contains the entry script and Web resources
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `merrymonn`
---
+REQUIREMENTS
+------------
 
--- --------------------------------------------------------
+The minimum requirement by this project template that your Web server supports PHP 5.6.0.
 
---
--- Table structure for table `merrymoon_round_order`
---
 
-CREATE TABLE `merrymoon_round_order` (
-  `id` int(11) NOT NULL,
-  `round` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `acc_twitter` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `product` text COLLATE utf8mb4_unicode_ci,
-  `amount` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `paid` float DEFAULT NULL,
-  `remaining` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `remark` text COLLATE utf8mb4_unicode_ci,
-  `tracking_no` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_create` datetime DEFAULT NULL,
-  `date_update` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSTALLATION
+------------
 
---
--- Dumping data for table `merrymoon_round_order`
---
+### Install via Composer
 
-INSERT INTO `merrymoon_round_order` (`id`, `round`, `acc_twitter`, `product`, `amount`, `paid`, `remaining`, `status`, `remark`, `tracking_no`, `date_create`, `date_update`) VALUES
-(1, 'เกา รอบ xx/xx/xxxx', '@eveaspte', 'gabriel signed cd (explicit) - 11 บั้ม', '', NULL, '', 'เว็บยังไม่ส่ง', 'ไม่รวมค่าส่งกลับไทย', '', NULL, NULL),
-(2, 'เกา รอบ xx/xx/xxxx', '@Lexieq_', 'taylors we’ll run rocket', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(3, 'เกา รอบ xx/xx/xxxx', '@tata_bababa', 'funko pop xialing', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(4, 'เกา รอบ xx/xx/xxxx', '@firstarcy', 'The 4ocean Beaded Bracelet ', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(5, 'เกา รอบ xx/xx/xxxx', '@firstarcy', 'Rastaclat Bracelet (Grey Day),(Everglades)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(6, 'เกา รอบ xx/xx/xxxx', '@bell0ryn', 'แผ่นซีดี matt maltese', '', NULL, '', 'ถึงไทยแล้ว ไม่มีที่อยู่', '', '', NULL, NULL),
-(7, 'เกา รอบ xx/xx/xxxx', '@prmxpcy', 'crocs mineral blue size 6', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(8, 'เกา รอบ xx/xx/xxxx', '@ACT_170546', 'L:A Bruket 017 lip blam (almond/coconut)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(9, 'เกา รอบ xx/xx/xxxx', '@mxxwkyr', 'truz medium ( woopy + podong ) 2 ตัว', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(10, 'เกา รอบ xx/xx/xxxx', '@BungkeeTSP', 'Ebay Seventeen Dino', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(11, 'เกา รอบ xx/xx/xxxx', '@deserve2behated', 'การ์ดดีล+บั้ม จากแอค@yaangdooing', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(12, 'เกา รอบ xx/xx/xxxx', '@hamkkehaeyo', 'zara rockstyle flap', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(13, 'เกา รอบ xx/xx/xxxx', '@liangliang1479', ' essentials - Grey long long Sleeve T-shirt', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(14, 'เกา รอบ xx/xx/xxxx', '@ruknongpp', 'vintage hollywood (bracelet)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(15, 'เกา รอบ xx/xx/xxxx', '@xxreallllBT', 'puma : maison kitsuné oversized tee (L)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(16, 'เกา รอบ xx/xx/xxxx', '@punchpicha', 'บั้มดีล DPR LIVE', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(17, 'เกา รอบ xx/xx/xxxx', '@illbeyourmnstar', 'Film fuji c200 1', '', NULL, '', 'ยกเลิกคืนเงืนแล้ว', '', '', NULL, NULL),
-(18, 'เกา รอบ xx/xx/xxxx', '@real_cyeoln', 'Film fuji c200 1', '', NULL, '', 'ยกเลิกคืนเงืนแล้ว', '', '', NULL, NULL),
-(19, 'เกา รอบ xx/xx/xxxx', 'pld_k', 'Film fuji c200 1', '', NULL, '', 'ยกเลิกคืนเงืนแล้ว', '', '', NULL, NULL),
-(20, 'เกา รอบ xx/xx/xxxx', 'feb_021 ', 'Film fuji c200 1', '', NULL, '', 'ยกเลิกคืนเงืนแล้ว', '', '', NULL, NULL),
-(21, 'เกา รอบ xx/xx/xxxx', '@2309Ls', 'Film fuji c200. (10ม้วน)', '', NULL, '', 'ยกเลิกคืนเงืนแล้ว', '', '', NULL, NULL),
-(22, 'เกา รอบ xx/xx/xxxx', '@underthesoxew_', 'Film fuji c200 1', '', NULL, '', 'ยกเลิกคืนเงืนแล้ว', '', '', NULL, NULL),
-(23, 'เกา รอบ xx/xx/xxxx', '@Iamhappy_TUY', 'Rastaclat mirage', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(24, 'เกา รอบ xx/xx/xxxx', '@deserve2behated', 'การ์ดดีลจากแอคhappyday0112 (kr)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(25, 'เกา รอบ xx/xx/xxxx', '@Frequentlyraku ', 'กางเกง dickies waist 32 inseam 32 color Desert khaki(DS)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(26, 'เกา รอบ xx/xx/xxxx', '@savemebymeandme', 'richard (singed8*10photo)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(27, 'เกา รอบ xx/xx/xxxx', '@pupaeyyy', 'crocs w 6', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(28, 'เกา รอบ xx/xx/xxxx', '@babycuterenjun', 'Harry Potter pop(ประมูลebay) UK', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(29, 'เกา รอบ xx/xx/xxxx', '@ployamparat', 'eBay twilight ', '', NULL, '', 'จัดส่งแล้ว', 'เว็บจะเริ่มส่ง 16/2', '', NULL, NULL),
-(30, 'เกา รอบ xx/xx/xxxx', '@822creamcheese', 'itzavibe angle cat (jaemin)hoodie M-black', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(31, 'เกา รอบ xx/xx/xxxx', ' @xxreallllBT', ' save the bees tee (black)', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(32, 'เกา รอบ xx/xx/xxxx', '@mxn27m', 'adidas AEROMOTION', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(33, 'เกา รอบ xx/xx/xxxx', '@Seopark(Seopark13)', 'N°1 DE CHANEL LIP AND CHEEK BALM เบอร์4', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(34, 'เกา รอบ xx/xx/xxxx', '@Mcheraim', 'i case First class for iPhone 11', '', NULL, '', 'ส่งกลับไทยแล้ว', '', '', NULL, NULL),
-(35, 'เกา รอบ xx/xx/xxxx', '@s1jborn2', 'Acqua di Parma Mirto di Panarea 10ml', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(36, 'เกา รอบ xx/xx/xxxx', '@kmoyashin', 'Dolls kill', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(37, 'เกา รอบ xx/xx/xxxx', '@33iscuit', 'MIT Vintage Applique hood ', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(38, 'เกา รอบ xx/xx/xxxx', '@baconnbite', 'bbw ปลอกสเปรย์', '', NULL, '', 'ส่งกลับไทยแล้ว', '', '', NULL, NULL),
-(39, 'เกา รอบ xx/xx/xxxx', '@Liangliang1479', 'กระเป๋าFila+เสื้อESSENTIALS ', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(40, 'เกา รอบ xx/xx/xxxx', 'mayntx_', '1461 smooth leather oxfords shoes', '', NULL, '', 'ส่งกลับไทยแล้ว', '', '', NULL, NULL),
-(41, 'เกา รอบ xx/xx/xxxx', '@cigarettesblck', '2020-21 Panini Prizm Premier League Kasper Schmeichel Kaboom ', '', NULL, '', 'ของเข้าไทยแล้ว', '', '', NULL, NULL),
-(42, 'เกา รอบ xx/xx/xxxx', '@NBillilly_Tong', 'fila size 265', '', NULL, '', 'รอรอบส่งกลับ8/3', '', '', NULL, NULL),
-(43, 'เกา รอบ xx/xx/xxxx', '@amjunetojuly', 'บั้ม stray kids 4 บั้ม เว็บ straykids shop', '', NULL, '', 'เว็บยังไม่ส่ง', '', '', NULL, NULL),
-(44, 'เกา รอบ xx/xx/xxxx', 'Chipmsf', 'Mors Vincit Omnia Playing Cards', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(45, 'เกา รอบ xx/xx/xxxx', 'ammlmm6_S', 'ทดสอบ (2ตัว)', '', NULL, '', 'รอมาสผลิต', '', '', NULL, '2022-03-07 10:56:49'),
-(46, 'เกา รอบ xx/xx/xxxx', 'jellybeyond', 'Baby GUND Oh So Snuggly Hippo Large Plush Stuffed Animal ', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(47, 'เกา รอบ xx/xx/xxxx', '@chanomkaimookpp', 'rastaclat bricks&claw', '', NULL, '', 'จัดส่งแล้ว', '', '', NULL, NULL),
-(48, 'เกา รอบ xx/xx/xxxx', '@Yiboismylover', 'jewels iPhone Xr case', '', NULL, '', 'รอเว็บส่งอันใหม่ของหาย', '', '', NULL, NULL),
-(49, 'เกา รอบ xx/xx/xxxx', '__0K10', 'the suicide (2qty)', '', NULL, '', 'จะส่งช่วง mar 2022', '', '', NULL, NULL),
-(50, 'เกา รอบ xx/xx/xxxx', '@baby__teeth', 'blue facade tote bag', '', NULL, '', 'เว็บจัดส่งแล้ว', '', '', NULL, NULL),
-(51, 'เกา รอบ xx/xx/xxxx', '@ahaix', 'liverpoolfc shirt(no custom) (เว็บเริ่มส่งวันที่7/3)', '', NULL, '', 'รอเข้าบ้านอังกฤษ', '', '', NULL, NULL),
-(52, 'เกา รอบ xx/xx/xxxx', '__0K10', 'the joker(1qty)', '', NULL, '', 'ส่งกลับไทยแล้ว', '', '', NULL, NULL),
-(53, 'เกา รอบ xx/xx/xxxx', '__pearlmoon', 'Online Exclusive Hoppy Swirls Frog (เรือ)', '', NULL, '', 'เข้าโกดังเรือแล้ว', '', '', NULL, NULL),
-(54, 'เกา รอบ xx/xx/xxxx', '@_3X1X1995_ ', 'nct dream (2qty) am global', '', NULL, '', 'เว็บยังไม่ส่ง', '', '', NULL, NULL),
-(55, 'เกา รอบ xx/xx/xxxx', '@_3X1X1995_ ', 'Nct dream glitch mode (smtown) 10qty (เกา)', '', NULL, '', 'เว็บยังไม่ส่ง', '', '', NULL, NULL),
-(56, 'เกา รอบ xx/xx/xxxx', '@ikyeardn', 'growing up hat', '', NULL, '', 'เว็บยังไม่ส่ง', '', '', NULL, NULL),
-(57, 'เกา รอบ xx/xx/xxxx', 'alwaysbemay', 'KAWS BFF Open Edition Vinyl Figure', '', NULL, '', 'ส่งเข้าstockxแล้ว', '', '', NULL, NULL),
-(58, 'เกา รอบ xx/xx/xxxx', '@mxxwkyr', 'ktown benefits ( hyunsuk,yoshi,jaehyuk,asahi,yedam,junghwan', '', NULL, '', 'รอเข้าไทย', '', '', NULL, NULL),
-(59, 'เกา รอบ xx/xx/xxxx', '@backtobam', 'funkpop marvel adventures ', '', NULL, '', 'เว็บจัดส่งแล้ว', '', '', NULL, NULL),
-(60, 'เกา รอบ xx/xx/xxxx', 'f0226_', 'บั้มไซน์ เยดัม treasure', '', NULL, '', 'เว็บยังไม่ส่ง', '', '', NULL, NULL),
-(61, 'เกา รอบ xx/xx/xxxx', '@sminzindaeyo', 'ไซน์ treasure makestar (asahi) 2qty', '', NULL, '', 'เว็บยังไม่ส่ง', '', '', NULL, '2022-03-09 09:55:25'),
-(62, 'เกา รอบ xx/xx/xxxx', ': boei--------', 'ULTRA PRO PORTFOLIO: POKEMON - CHARMANDER (9-POCKET)', '', NULL, '', 'เว็บยังไม่ส่ง', '', '', NULL, '2022-03-09 09:55:25'),
-(63, 'เกา รอบ xx/xx/xxxx', '@kapongzzz', 'ทดสอบ', '11 อัน', 0.02, '50 บาท + ค่าส่งในไทย', 'จัดส่งแล้ว', 'ทดสอบ', 'EF123456789TH', '2022-03-07 21:16:38', '2022-03-07 21:17:16');
+If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
+at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
--- --------------------------------------------------------
+You can then install this project template using the following command:
 
---
--- Table structure for table `merrymoon_status`
---
+~~~
+composer create-project --prefer-dist yiisoft/yii2-app-basic basic
+~~~
 
-CREATE TABLE `merrymoon_status` (
-  `id` int(11) NOT NULL,
-  `statusname` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `btnclass` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+Now you should be able to access the application through the following URL, assuming `basic` is the directory
+directly under the Web root.
 
---
--- Dumping data for table `merrymoon_status`
---
+~~~
+http://localhost/basic/web/
+~~~
 
-INSERT INTO `merrymoon_status` (`id`, `statusname`, `btnclass`) VALUES
-(1, 'กดของแล้ว', 'btn-bg-gray'),
-(2, 'เว็บจัดส่งแล้ว', 'btn-bg-gray'),
-(3, 'รอเข้าบ้านอังกฤษ', 'btn-bg-gray'),
-(4, 'รอเข้าบ้านเกา', 'btn-bg-gray'),
-(5, 'ส่งเข้าโกดังเรือแล้ว', 'btn-bg-gray'),
-(6, 'ส่งกลับไทยแล้ว', 'btn-bg-gray'),
-(7, 'ถึงไทยแล้ว', 'btn-bg-gray'),
-(8, 'จัดส่งแล้ว', 'btn-bg-sky'),
-(9, 'ยกเลิกคืนแงินแล้ว', 'btn-bg-red');
+### Install from an Archive File
 
--- --------------------------------------------------------
+Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
+a directory named `basic` that is directly under the Web root.
 
---
--- Table structure for table `merrymoon_username`
---
+Set cookie validation key in `config/web.php` file to some random secret string:
 
-CREATE TABLE `merrymoon_username` (
-  `id` int(11) NOT NULL,
-  `reg_email` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `reg_pword` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `shopname` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+```php
+'request' => [
+    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+    'cookieValidationKey' => '<secret random string goes here>',
+],
+```
 
---
--- Dumping data for table `merrymoon_username`
---
+You can then access the application through the following URL:
 
-INSERT INTO `merrymoon_username` (`id`, `reg_email`, `reg_pword`, `shopname`) VALUES
-(1, 'admin', '301f0c8ac990c5a19a908e71ad0e7106', 'Merry Moon'),
-(2, 'yodkamolpunchai@gmail.com', '1af2bb3fa0fc27a29b36ae15140fdd8f', '');
+~~~
+http://localhost/basic/web/
+~~~
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `merrymoon_round_order`
---
-ALTER TABLE `merrymoon_round_order`
-  ADD PRIMARY KEY (`id`);
+### Install with Docker
 
---
--- Indexes for table `merrymoon_status`
---
-ALTER TABLE `merrymoon_status`
-  ADD PRIMARY KEY (`id`);
+Update your vendor packages
 
---
--- Indexes for table `merrymoon_username`
---
-ALTER TABLE `merrymoon_username`
-  ADD PRIMARY KEY (`id`);
+    docker-compose run --rm php composer update --prefer-dist
+    
+Run the installation triggers (creating cookie validation code)
 
---
--- AUTO_INCREMENT for dumped tables
---
+    docker-compose run --rm php composer install    
+    
+Start the container
 
---
--- AUTO_INCREMENT for table `merrymoon_round_order`
---
-ALTER TABLE `merrymoon_round_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+    docker-compose up -d
+    
+You can then access the application through the following URL:
 
---
--- AUTO_INCREMENT for table `merrymoon_status`
---
-ALTER TABLE `merrymoon_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+    http://127.0.0.1:8000
 
---
--- AUTO_INCREMENT for table `merrymoon_username`
---
-ALTER TABLE `merrymoon_username`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+**NOTES:** 
+- Minimum required Docker engine version `17.04` for development (see [Performance tuning for volume mounts](https://docs.docker.com/docker-for-mac/osxfs-caching/))
+- The default configuration uses a host-volume in your home directory `.docker-composer` for composer caches
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CONFIGURATION
+-------------
+
+### Database
+
+Edit the file `config/db.php` with real data, for example:
+
+```php
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'username' => 'root',
+    'password' => '1234',
+    'charset' => 'utf8',
+];
+```
+
+**NOTES:**
+- Yii won't create the database for you, this has to be done manually before you can access it.
+- Check and edit the other files in the `config/` directory to customize your application as required.
+- Refer to the README in the `tests` directory for information specific to basic application tests.
+
+
+TESTING
+-------
+
+Tests are located in `tests` directory. They are developed with [Codeception PHP Testing Framework](http://codeception.com/).
+By default, there are 3 test suites:
+
+- `unit`
+- `functional`
+- `acceptance`
+
+Tests can be executed by running
+
+```
+vendor/bin/codecept run
+```
+
+The command above will execute unit and functional tests. Unit tests are testing the system components, while functional
+tests are for testing user interaction. Acceptance tests are disabled by default as they require additional setup since
+they perform testing in real browser. 
+
+
+### Running  acceptance tests
+
+To execute acceptance tests do the following:  
+
+1. Rename `tests/acceptance.suite.yml.example` to `tests/acceptance.suite.yml` to enable suite configuration
+
+2. Replace `codeception/base` package in `composer.json` with `codeception/codeception` to install full-featured
+   version of Codeception
+
+3. Update dependencies with Composer 
+
+    ```
+    composer update  
+    ```
+
+4. Download [Selenium Server](http://www.seleniumhq.org/download/) and launch it:
+
+    ```
+    java -jar ~/selenium-server-standalone-x.xx.x.jar
+    ```
+
+    In case of using Selenium Server 3.0 with Firefox browser since v48 or Google Chrome since v53 you must download [GeckoDriver](https://github.com/mozilla/geckodriver/releases) or [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) and launch Selenium with it:
+
+    ```
+    # for Firefox
+    java -jar -Dwebdriver.gecko.driver=~/geckodriver ~/selenium-server-standalone-3.xx.x.jar
+    
+    # for Google Chrome
+    java -jar -Dwebdriver.chrome.driver=~/chromedriver ~/selenium-server-standalone-3.xx.x.jar
+    ``` 
+    
+    As an alternative way you can use already configured Docker container with older versions of Selenium and Firefox:
+    
+    ```
+    docker run --net=host selenium/standalone-firefox:2.53.0
+    ```
+
+5. (Optional) Create `yii2basic_test` database and update it by applying migrations if you have them.
+
+   ```
+   tests/bin/yii migrate
+   ```
+
+   The database configuration can be found at `config/test_db.php`.
+
+
+6. Start web server:
+
+    ```
+    tests/bin/yii serve
+    ```
+
+7. Now you can run all available tests
+
+   ```
+   # run all available tests
+   vendor/bin/codecept run
+
+   # run acceptance tests
+   vendor/bin/codecept run acceptance
+
+   # run only unit and functional tests
+   vendor/bin/codecept run unit,functional
+   ```
+
+### Code coverage support
+
+By default, code coverage is disabled in `codeception.yml` configuration file, you should uncomment needed rows to be able
+to collect code coverage. You can run your tests and collect coverage with the following command:
+
+```
+#collect coverage for all tests
+vendor/bin/codecept run --coverage --coverage-html --coverage-xml
+
+#collect coverage only for unit tests
+vendor/bin/codecept run unit --coverage --coverage-html --coverage-xml
+
+#collect coverage for unit and functional tests
+vendor/bin/codecept run functional,unit --coverage --coverage-html --coverage-xml
+```
+
+You can see code coverage output under the `tests/_output` directory.
+
